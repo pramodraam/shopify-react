@@ -16,7 +16,7 @@ export class ShopProvider extends Component {
     checkout: {},
     isCartOpen: false,
     isMenuOpen: false
-  }
+  };
 
   componentDidMount() {
     this.createCheckout()
@@ -61,12 +61,12 @@ export class ShopProvider extends Component {
   openMenu = () => {}
 
   render() {
-    
+
     console.log(this.state.checkout);
 
     return (
       <ShopContext.Provider>
-        {this.props.children}
+        {this.props.children}                                                   
       </ShopContext.Provider>
     )
   }
