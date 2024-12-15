@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Client from shopify-buy
+import Client from 'shopify-buy'
 
 const ShopContext = React.createContext();
 
@@ -18,8 +18,14 @@ export class ShopProvider extends Component {
     isMenuOpen: false
   }
 
-  createCheckout = async () => {
+  componentDidMount() {
+    this.createCheckout()
+  }
 
+  createCheckout = async () => {
+    const checkout = await client.checkout.create()
+    localStorage.setItem("checkout-id", checkout.id)
+    this.setState({ checkout: checkout })
   }
 
   fetchCheckout = async () => {
@@ -35,11 +41,15 @@ export class ShopProvider extends Component {
   }
 
   fetchAllProducts = async () => {
-
+      // Do something with the products.
+      const products = await client.product.fetchAll();
+      console.log(products);
+      this.setState({ products: products })
   }
 
   fetchProductWithHandle = async (handle) => {
-
+    const product = await client.product.fetchByHandle(handle);
+    this.setState({ product: product })
   }
 
   closeCart = () => {}
@@ -51,6 +61,9 @@ export class ShopProvider extends Component {
   openMenu = () => {}
 
   render() {
+    
+    console.log(this.state.checkout);
+
     return (
       <ShopContext.Provider>
         {this.props.children}
