@@ -18,7 +18,7 @@ const Home = () => {
     <div>
       {
         products.map(product => (
-          <Link to={`/products/${product.handle}`} key={ product.title }>{ product.title }</Link>
+          <Link to={`/products/${product.handle}`} key={product.title}>{product.title}</Link>
         ))
       }
     </div>

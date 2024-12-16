@@ -83,9 +83,7 @@ export class ShopProvider extends Component {
           closeCart: this.closeCart,
           openCart: this.openCart,
           closeMenu: this.closeMenu,
-          openMenu: this.openMenu,
-          
-
+          openMenu: this.openMenu,       
         }}>
         {this.props.children}                                                   
       </ShopContext.Provider>

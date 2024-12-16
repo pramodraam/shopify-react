@@ -7,12 +7,16 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/products/:handle">
-          <ProductPage />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <p>Navigation</p>
+        <switch>
+          <Route path="/products/:handle">
+            <ProductPage />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </switch>
+        <p>Footer</p>
       </Router>
     </div>
   );
