@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home'
 import ProductPage from './pages/ProductPage';
@@ -8,14 +8,14 @@ function App() {
     <div className="App">
       <Router>
         <p>Navigation</p>
-        <switch>
+        <Switch>
           <Route path="/products/:handle">
             <ProductPage />
           </Route>
           <Route path="/">
             <Home />
           </Route>
-        </switch>
+        </Switch>
         <p>Footer</p>
       </Router>
     </div>
