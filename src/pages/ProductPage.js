@@ -13,30 +13,35 @@ const ProductPage = () => {
     fetchProductWithHandle(handle)
   }, [fetchProductWithHandle, handle])
 
-  if (!product) return <div>Loadings..</div>
+  if (!product.title) return <div>Loadings..</div>
 
   return (
-    <Box>
-      <Grid templateColumns="repeat(2, 1fr)">
+    <Box p="2rem">
+      <Grid templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)"]} m="auto">
         {product.images && product.images.length > 0 ? (
-        <Image src={product.images[0].src} alt={product.title} />
+        <Flex justifyContent="center" alignItems="center">
+          <Image src={product.images[0].src} alt={product.title} />
+        </Flex>
         ) : (
         <Text>No Image Available</Text>
         )}
-        <Box>
-          <Heading>{product.title}</Heading>
+        <Flex flexDirection="column" alignItems="center" justifyContent="center" px="2rem">
+          <Heading pb="2rem">{product.title}</Heading>
           {product.variants ? (
-          <Text>${product.variants[0].price.amount}</Text>
+          <Text fontWeight="bold" pb="2rem">${product.variants[0].price.amount}</Text>
           ) : (
-          <Text>No Variant Available</Text>
+          <Text pb="2rem">No Variant Available</Text>
           )}
-          <Text>{product.description}</Text>
+          <Text pb="2rem" color="gray.500">{product.description}</Text>
           <Button
             onClick={()=> addItemToCheckout(product.variants[0].id, 1)}
+            _hover=" opacity: 70% "
+            w="10rem"
+            backgroundColor="#FF38BD" color="white"
           >
             Add to Cart
           </Button>
-        </Box>
+        </Flex>
       </Grid>
     </Box>
   )
