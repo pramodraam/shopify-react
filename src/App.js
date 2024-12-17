@@ -6,6 +6,7 @@ import ProductPage from './pages/ProductPage';
 import NavBar from './Components/NavBar';
 
 import Cart from './Components/Cart';
+import NavMenu from './Components/NavMenu';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <NavBar />
         <Cart />
+        <NavMenu />
         <Switch>
           <Route path="/products/:handle">
             <ProductPage />
