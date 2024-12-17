@@ -8,6 +8,8 @@ import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import NavMenu from './Components/NavMenu';
 
+import Footer from './Components/Footer';
+
 function App() {
   return (
     <div className="App">
@@ -23,7 +25,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <p>Footer</p>
+        <Footer />
       </Router>
     </div>
   );
