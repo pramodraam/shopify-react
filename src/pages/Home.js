@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { Box, Grid, Text, Image } from '@chakra-ui/react'
 
 import Hero from '../Components/Hero'
+import ImageWithText from '../Components/ImageWithText'
 
 const Home = () => {
 
@@ -39,7 +40,18 @@ const Home = () => {
           ))
         }
       </Grid>
-    </Box>
+      <ImageWithText 
+      image="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758"
+      heading="heading"
+      text="testing testingoooooooooooooooooo sfddddddddddddddddddddd" 
+      />
+      <ImageWithText 
+      reverse 
+      image="https://cdn.shopify.com/s/files/1/0472/5705/9496/files/bath-bomb-and-candle.jpg?v=1610066758"
+      heading="Second heading"
+      text="testing testingoooooooooooooooooo sfddddddddddddddddddddd" 
+      />   
+      </Box>
   )
 }
 
